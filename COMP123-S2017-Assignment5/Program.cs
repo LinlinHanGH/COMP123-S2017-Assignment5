@@ -4,6 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/* Name: Linlin Han
+ * Number: 300883493
+ * Date: August 15, 2017
+ * Description: A BMI calculator app with Windows Forms
+ * Version: 0.1
+ */
+
 namespace COMP123_S2017_Assignment5
 {
     static class Program
