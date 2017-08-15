@@ -12,7 +12,7 @@ using System.Windows.Forms;
  * Number: 300883493
  * Date: August 15, 2017
  * Description: A BMI calculator app with Windows Forms
- * Version: 0.2 - Add Metric BMI Calculation
+ * Version: 0.3 - Added Metric BMI Scale Result
  */
 
 namespace COMP123_S2017_Assignment5
@@ -23,6 +23,7 @@ namespace COMP123_S2017_Assignment5
         private double _result;
         private double _height;
         private double _weight;
+        private string _BMIScale;
 
         // PUBLIC PROPERTIES
         public double Result
@@ -66,6 +67,20 @@ namespace COMP123_S2017_Assignment5
 
         }
 
+        public string BMIScale
+        {
+            get
+            {
+                return this._BMIScale;
+            }
+
+            set
+            {
+                this._BMIScale = value;
+            }
+
+        }
+
 
         public BMICalculator()
         {
@@ -74,7 +89,7 @@ namespace COMP123_S2017_Assignment5
 
         private void BMICalculator_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void MetricRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -82,6 +97,7 @@ namespace COMP123_S2017_Assignment5
             RadioButton Metric = sender as RadioButton;
             HeightUnitTextBox.Text = "cm";
             WeightUnitTextBox.Text = "kg";
+            HeightUnitTextBox.ForeColor = Color.Black;
         }
 
         private void ImperialRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -89,6 +105,7 @@ namespace COMP123_S2017_Assignment5
             RadioButton Imperial = sender as RadioButton;
             HeightUnitTextBox.Text = "in";
             WeightUnitTextBox.Text = "lbs";
+            WeightUnitTextBox.ForeColor = Color.Black;
         }
 
 
@@ -97,14 +114,45 @@ namespace COMP123_S2017_Assignment5
             Button calculateButton = sender as Button;
             Height = double.Parse(HeightTextBox.Text);
             Weight = double.Parse(WeightTextBox.Text);
-            
+
             if (MetricRadioButton.Checked)
             {
-                Result = Math.Round(Weight/Math.Pow(Height/100,2));
+                Result = Math.Round(Weight / Math.Pow(Height / 100, 2));
                 BMIResultTextBox.Text = this.Result.ToString();
             }
-            
+            else if (ImperialRadioButton.Checked)
+            {
+                Result = Math.Round(Weight*703 / Math.Pow(Height, 2));
+                BMIResultTextBox.Text = this.Result.ToString();
+            }
 
+            this._ShowBMISacle();
+
+        }
+
+        private void _ShowBMISacle()
+        {
+            if (Result < 18.5)
+            {
+                BMIScale = "UnderWeight";
+            }
+            else if ((Result >= 18.5) && (Result < 24.9))
+            {
+                BMIScale = "Normal";
+            }
+            else if ((Result >= 25) && (Result < 29.9))
+            {
+                BMIScale = "Overweight";
+            }
+            else if (Result > 30)
+            {
+                BMIScale = "Obese";
+            }
+            else
+            {
+                BMIScale = "Undefined";
+            }
+            BMIScaleResultTextBox.Text = BMIScale;
         }
     }
 }
