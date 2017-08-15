@@ -74,6 +74,7 @@
             this.MetricRadioButton.TabStop = true;
             this.MetricRadioButton.Text = "Metric";
             this.MetricRadioButton.UseVisualStyleBackColor = true;
+            this.MetricRadioButton.CheckedChanged += new System.EventHandler(this.MetricRadioButton_CheckedChanged);
             // 
             // ImperialRadioButton
             // 
@@ -85,6 +86,7 @@
             this.ImperialRadioButton.TabStop = true;
             this.ImperialRadioButton.Text = "Imperial";
             this.ImperialRadioButton.UseVisualStyleBackColor = true;
+            this.ImperialRadioButton.CheckedChanged += new System.EventHandler(this.ImperialRadioButton_CheckedChanged);
             // 
             // CalculationTableLayoutPanel
             // 
@@ -148,6 +150,7 @@
             this.HeightUnitTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.HeightUnitTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.HeightUnitTextBox.Enabled = false;
+            this.HeightUnitTextBox.ForeColor = System.Drawing.Color.Black;
             this.HeightUnitTextBox.Location = new System.Drawing.Point(238, 6);
             this.HeightUnitTextBox.Name = "HeightUnitTextBox";
             this.HeightUnitTextBox.Size = new System.Drawing.Size(53, 46);
@@ -158,6 +161,7 @@
             this.WeightUnitTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.WeightUnitTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.WeightUnitTextBox.Enabled = false;
+            this.WeightUnitTextBox.ForeColor = System.Drawing.Color.Black;
             this.WeightUnitTextBox.Location = new System.Drawing.Point(238, 71);
             this.WeightUnitTextBox.Name = "WeightUnitTextBox";
             this.WeightUnitTextBox.Size = new System.Drawing.Size(53, 46);
@@ -202,6 +206,7 @@
             this.CalculateButton.TabIndex = 1;
             this.CalculateButton.Text = "Calculate BMI";
             this.CalculateButton.UseVisualStyleBackColor = false;
+            this.CalculateButton.Click += new System.EventHandler(this.CalculateButton_Click);
             // 
             // BMIResultTextBox
             // 
