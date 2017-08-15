@@ -38,8 +38,12 @@
             this.WeightTextBox = new System.Windows.Forms.TextBox();
             this.HeightUnitTextBox = new System.Windows.Forms.TextBox();
             this.WeightUnitTextBox = new System.Windows.Forms.TextBox();
+            this.ResultTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.BMILabel = new System.Windows.Forms.Label();
+            this.CalculateButton = new System.Windows.Forms.Button();
             this.StandardMetricTableLayoutPanel.SuspendLayout();
             this.CalculationTableLayoutPanel.SuspendLayout();
+            this.ResultTableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // StandardMetricTableLayoutPanel
@@ -49,7 +53,7 @@
             this.StandardMetricTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.StandardMetricTableLayoutPanel.Controls.Add(this.MetricRadioButton, 0, 0);
             this.StandardMetricTableLayoutPanel.Controls.Add(this.ImperialRadioButton, 1, 0);
-            this.StandardMetricTableLayoutPanel.Location = new System.Drawing.Point(16, 9);
+            this.StandardMetricTableLayoutPanel.Location = new System.Drawing.Point(16, 4);
             this.StandardMetricTableLayoutPanel.Name = "StandardMetricTableLayoutPanel";
             this.StandardMetricTableLayoutPanel.RowCount = 1;
             this.StandardMetricTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -91,7 +95,7 @@
             this.CalculationTableLayoutPanel.Controls.Add(this.WeightTextBox, 1, 1);
             this.CalculationTableLayoutPanel.Controls.Add(this.HeightUnitTextBox, 2, 0);
             this.CalculationTableLayoutPanel.Controls.Add(this.WeightUnitTextBox, 2, 1);
-            this.CalculationTableLayoutPanel.Location = new System.Drawing.Point(2, 72);
+            this.CalculationTableLayoutPanel.Location = new System.Drawing.Point(2, 53);
             this.CalculationTableLayoutPanel.Name = "CalculationTableLayoutPanel";
             this.CalculationTableLayoutPanel.RowCount = 2;
             this.CalculationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -156,11 +160,48 @@
             this.WeightUnitTextBox.Size = new System.Drawing.Size(53, 46);
             this.WeightUnitTextBox.TabIndex = 5;
             // 
+            // ResultTableLayoutPanel
+            // 
+            this.ResultTableLayoutPanel.ColumnCount = 1;
+            this.ResultTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.ResultTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.ResultTableLayoutPanel.Controls.Add(this.BMILabel, 0, 0);
+            this.ResultTableLayoutPanel.Location = new System.Drawing.Point(2, 246);
+            this.ResultTableLayoutPanel.Name = "ResultTableLayoutPanel";
+            this.ResultTableLayoutPanel.RowCount = 4;
+            this.ResultTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.ResultTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.ResultTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.ResultTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.ResultTableLayoutPanel.Size = new System.Drawing.Size(294, 173);
+            this.ResultTableLayoutPanel.TabIndex = 2;
+            // 
+            // BMILabel
+            // 
+            this.BMILabel.AutoSize = true;
+            this.BMILabel.Location = new System.Drawing.Point(3, 0);
+            this.BMILabel.Name = "BMILabel";
+            this.BMILabel.Size = new System.Drawing.Size(126, 43);
+            this.BMILabel.TabIndex = 0;
+            this.BMILabel.Text = "label1";
+            // 
+            // CalculateButton
+            // 
+            this.CalculateButton.BackColor = System.Drawing.Color.PowderBlue;
+            this.CalculateButton.Location = new System.Drawing.Point(2, 191);
+            this.CalculateButton.Name = "CalculateButton";
+            this.CalculateButton.Size = new System.Drawing.Size(294, 41);
+            this.CalculateButton.TabIndex = 1;
+            this.CalculateButton.Text = "Calculate BMI";
+            this.CalculateButton.UseVisualStyleBackColor = false;
+            // 
             // BMICalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(23F, 46F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(298, 424);
+            this.Controls.Add(this.ResultTableLayoutPanel);
+            this.Controls.Add(this.CalculateButton);
             this.Controls.Add(this.CalculationTableLayoutPanel);
             this.Controls.Add(this.StandardMetricTableLayoutPanel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -174,6 +215,8 @@
             this.StandardMetricTableLayoutPanel.PerformLayout();
             this.CalculationTableLayoutPanel.ResumeLayout(false);
             this.CalculationTableLayoutPanel.PerformLayout();
+            this.ResultTableLayoutPanel.ResumeLayout(false);
+            this.ResultTableLayoutPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -190,6 +233,9 @@
         private System.Windows.Forms.TextBox WeightTextBox;
         private System.Windows.Forms.TextBox HeightUnitTextBox;
         private System.Windows.Forms.TextBox WeightUnitTextBox;
+        private System.Windows.Forms.TableLayoutPanel ResultTableLayoutPanel;
+        private System.Windows.Forms.Label BMILabel;
+        private System.Windows.Forms.Button CalculateButton;
     }
 }
 
