@@ -12,7 +12,7 @@ using System.Windows.Forms;
  * Number: 300883493
  * Date: August 15, 2017
  * Description: This is the Splash form shown before the BMICalculator
- * Version: 0.1 - Created Splash Form
+ * Version: 0.2 - Added background image
  */
 
 namespace COMP123_S2017_Assignment5
@@ -29,6 +29,11 @@ namespace COMP123_S2017_Assignment5
 
         }
 
+        /// <summary>
+        /// This is the event handler for the "Tick" 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SplashFormTimer_Tick(object sender, EventArgs e)
         {
             Program.BMIcalculator.Show();

@@ -92,6 +92,11 @@ namespace COMP123_S2017_Assignment5
             
         }
 
+        /// <summary>
+        /// This event handler shows the metric units when MetricRadioButton is checked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MetricRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             RadioButton Metric = sender as RadioButton;
@@ -99,6 +104,11 @@ namespace COMP123_S2017_Assignment5
             WeightUnitLabel.Text = "kg";
         }
 
+        /// <summary>
+        /// This event handler shows the Imperial units when ImperialRadioButton is checked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ImperialRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             RadioButton Imperial = sender as RadioButton;
@@ -106,7 +116,11 @@ namespace COMP123_S2017_Assignment5
             WeightUnitLabel.Text = "lbs";
         }
 
-
+        /// <summary>
+        /// This event handler shows the BMI result when CalculateButton is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CalculateButton_Click(object sender, EventArgs e)
         {
             BMIResultTextBox.ForeColor = SystemColors.ControlText;
@@ -130,6 +144,9 @@ namespace COMP123_S2017_Assignment5
             
         }
 
+        /// <summary>
+        /// This method shows the result of BMI Scale
+        /// </summary>
         private void _ShowBMISacle()
         {
             if (Result < 18.5)
@@ -157,6 +174,16 @@ namespace COMP123_S2017_Assignment5
             BMIScaleResultTextBox.ForeColor = Color.MidnightBlue;
             
             BMIScaleResultTextBox.ReadOnly = true;
+        }
+
+        /// <summary>
+        /// This is an event handler for the "FormClosing" event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BMICalculator_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

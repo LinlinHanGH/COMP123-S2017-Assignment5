@@ -252,7 +252,9 @@
             this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.MaximizeBox = false;
             this.Name = "BMICalculator";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BMICalculator";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BMICalculator_FormClosing);
             this.Load += new System.EventHandler(this.BMICalculator_Load);
             this.StandardMetricTableLayoutPanel.ResumeLayout(false);
             this.StandardMetricTableLayoutPanel.PerformLayout();
