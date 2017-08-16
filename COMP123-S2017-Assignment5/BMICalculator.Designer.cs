@@ -105,7 +105,7 @@
             this.CalculationTableLayoutPanel.RowCount = 2;
             this.CalculationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.CalculationTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.CalculationTableLayoutPanel.Size = new System.Drawing.Size(294, 122);
+            this.CalculationTableLayoutPanel.Size = new System.Drawing.Size(294, 117);
             this.CalculationTableLayoutPanel.TabIndex = 1;
             // 
             // HeightLabel
@@ -114,7 +114,7 @@
             this.HeightLabel.AutoSize = true;
             this.HeightLabel.Location = new System.Drawing.Point(6, 0);
             this.HeightLabel.Name = "HeightLabel";
-            this.HeightLabel.Size = new System.Drawing.Size(135, 61);
+            this.HeightLabel.Size = new System.Drawing.Size(135, 58);
             this.HeightLabel.TabIndex = 0;
             this.HeightLabel.Text = "My Height";
             this.HeightLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -123,16 +123,16 @@
             // 
             this.WeightLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.WeightLabel.AutoSize = true;
-            this.WeightLabel.Location = new System.Drawing.Point(7, 61);
+            this.WeightLabel.Location = new System.Drawing.Point(7, 58);
             this.WeightLabel.Name = "WeightLabel";
-            this.WeightLabel.Size = new System.Drawing.Size(133, 61);
+            this.WeightLabel.Size = new System.Drawing.Size(133, 59);
             this.WeightLabel.TabIndex = 1;
             this.WeightLabel.Text = "My Weight";
             // 
             // HeightTextBox
             // 
             this.HeightTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.HeightTextBox.Location = new System.Drawing.Point(150, 4);
+            this.HeightTextBox.Location = new System.Drawing.Point(150, 3);
             this.HeightTextBox.Name = "HeightTextBox";
             this.HeightTextBox.Size = new System.Drawing.Size(82, 53);
             this.HeightTextBox.TabIndex = 2;
@@ -140,7 +140,7 @@
             // WeightTextBox
             // 
             this.WeightTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.WeightTextBox.Location = new System.Drawing.Point(150, 65);
+            this.WeightTextBox.Location = new System.Drawing.Point(150, 61);
             this.WeightTextBox.Name = "WeightTextBox";
             this.WeightTextBox.Size = new System.Drawing.Size(82, 53);
             this.WeightTextBox.TabIndex = 3;
@@ -149,7 +149,7 @@
             // 
             this.HeightUnitLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.HeightUnitLabel.AutoSize = true;
-            this.HeightUnitLabel.Location = new System.Drawing.Point(238, 7);
+            this.HeightUnitLabel.Location = new System.Drawing.Point(238, 6);
             this.HeightUnitLabel.Name = "HeightUnitLabel";
             this.HeightUnitLabel.Size = new System.Drawing.Size(31, 46);
             this.HeightUnitLabel.TabIndex = 6;
@@ -159,7 +159,7 @@
             // 
             this.WeightUnitLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.WeightUnitLabel.AutoSize = true;
-            this.WeightUnitLabel.Location = new System.Drawing.Point(238, 68);
+            this.WeightUnitLabel.Location = new System.Drawing.Point(238, 64);
             this.WeightUnitLabel.Name = "WeightUnitLabel";
             this.WeightUnitLabel.Size = new System.Drawing.Size(31, 46);
             this.WeightUnitLabel.TabIndex = 7;
