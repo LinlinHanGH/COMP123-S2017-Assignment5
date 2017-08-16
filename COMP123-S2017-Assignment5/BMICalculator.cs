@@ -12,7 +12,7 @@ using System.Windows.Forms;
  * Number: 300883493
  * Date: August 15, 2017
  * Description: A BMI calculator app with Windows Forms
- * Version: 0.4 - Changed the ForeColor of readonly textbox
+ * Version: 0.5 - Added clear method to clear prevoius values
  */
 
 namespace COMP123_S2017_Assignment5
@@ -99,6 +99,7 @@ namespace COMP123_S2017_Assignment5
         /// <param name="e"></param>
         private void MetricRadioButton_CheckedChanged(object sender, EventArgs e)
         {
+            this._clear();
             RadioButton Metric = sender as RadioButton;
             HeightUnitLabel.Text = "cm";
             WeightUnitLabel.Text = "kg";
@@ -111,6 +112,7 @@ namespace COMP123_S2017_Assignment5
         /// <param name="e"></param>
         private void ImperialRadioButton_CheckedChanged(object sender, EventArgs e)
         {
+            this._clear();
             RadioButton Imperial = sender as RadioButton;
             HeightUnitLabel.Text = "in";
             WeightUnitLabel.Text = "lbs";
@@ -123,6 +125,7 @@ namespace COMP123_S2017_Assignment5
         /// <param name="e"></param>
         private void CalculateButton_Click(object sender, EventArgs e)
         {
+            
             BMIResultTextBox.ForeColor = SystemColors.ControlText;
             Button calculateButton = sender as Button;
             Height = double.Parse(HeightTextBox.Text);
@@ -140,14 +143,26 @@ namespace COMP123_S2017_Assignment5
             BMIResultTextBox.ForeColor = Color.MidnightBlue;
             BMIResultTextBox.Text = this.Result.ToString();
             BMIResultTextBox.ReadOnly = true;
-            this._ShowBMISacle();
+            this._showBMISacle();
             
+        }
+
+        /// <summary>
+        /// This method clears the value of previous calculation
+        /// </summary>
+        private void _clear()
+        {
+            HeightTextBox.Text = "";
+            WeightTextBox.Text = "";
+            BMIResultTextBox.Text= "";
+            BMIScaleResultTextBox.Text = "";
+
         }
 
         /// <summary>
         /// This method shows the result of BMI Scale
         /// </summary>
-        private void _ShowBMISacle()
+        private void _showBMISacle()
         {
             if (Result < 18.5)
             {
