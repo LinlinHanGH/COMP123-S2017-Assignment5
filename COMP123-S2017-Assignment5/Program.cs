@@ -15,6 +15,9 @@ namespace COMP123_S2017_Assignment5
 {
     static class Program
     {
+        //Create Reference to Forms
+        public static BMICalculator BMIcalculator;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -23,7 +26,9 @@ namespace COMP123_S2017_Assignment5
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BMICalculator());
+
+            BMIcalculator = new BMICalculator();
+            Application.Run(new SplashForm());
         }
     }
 }
