@@ -12,7 +12,7 @@ using System.Windows.Forms;
  * Number: 300883493
  * Date: August 15, 2017
  * Description: A BMI calculator app with Windows Forms
- * Version: 0.3 - Added Metric BMI Scale Result
+ * Version: 0.4 - Changed the ForeColor of readonly textbox
  */
 
 namespace COMP123_S2017_Assignment5
@@ -95,22 +95,21 @@ namespace COMP123_S2017_Assignment5
         private void MetricRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             RadioButton Metric = sender as RadioButton;
-            HeightUnitTextBox.Text = "cm";
-            WeightUnitTextBox.Text = "kg";
-            HeightUnitTextBox.ForeColor = Color.Black;
+            HeightUnitLabel.Text = "cm";
+            WeightUnitLabel.Text = "kg";
         }
 
         private void ImperialRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             RadioButton Imperial = sender as RadioButton;
-            HeightUnitTextBox.Text = "in";
-            WeightUnitTextBox.Text = "lbs";
-            WeightUnitTextBox.ForeColor = Color.Black;
+            HeightUnitLabel.Text = "in";
+            WeightUnitLabel.Text = "lbs";
         }
 
 
         private void CalculateButton_Click(object sender, EventArgs e)
         {
+            BMIResultTextBox.ForeColor = SystemColors.ControlText;
             Button calculateButton = sender as Button;
             Height = double.Parse(HeightTextBox.Text);
             Weight = double.Parse(WeightTextBox.Text);
@@ -118,16 +117,17 @@ namespace COMP123_S2017_Assignment5
             if (MetricRadioButton.Checked)
             {
                 Result = Math.Round(Weight / Math.Pow(Height / 100, 2));
-                BMIResultTextBox.Text = this.Result.ToString();
             }
             else if (ImperialRadioButton.Checked)
             {
                 Result = Math.Round(Weight*703 / Math.Pow(Height, 2));
-                BMIResultTextBox.Text = this.Result.ToString();
             }
-
+            BMIResultTextBox.ReadOnly = false;
+            BMIResultTextBox.ForeColor = Color.MidnightBlue;
+            BMIResultTextBox.Text = this.Result.ToString();
+            BMIResultTextBox.ReadOnly = true;
             this._ShowBMISacle();
-
+            
         }
 
         private void _ShowBMISacle()
@@ -153,6 +153,10 @@ namespace COMP123_S2017_Assignment5
                 BMIScale = "Undefined";
             }
             BMIScaleResultTextBox.Text = BMIScale;
+            BMIScaleResultTextBox.ReadOnly = false;
+            BMIScaleResultTextBox.ForeColor = Color.MidnightBlue;
+            
+            BMIScaleResultTextBox.ReadOnly = true;
         }
     }
 }
